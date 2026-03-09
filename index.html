@@ -1,67 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Happy Birthday Gagan 💖</title>
+<title>Happy Birthday Gagan BFF😍❤️😊😘🎂</title>
 
 <style>
 
 body{
-    margin:0;
-    font-family: Arial;
-    background: linear-gradient(135deg,#ffc0cb,#ffe6f0);
-    overflow:hidden;
-    text-align:center;
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#ffc0cb,#ffe6f0);
+text-align:center;
+overflow:hidden;
 }
+
+/* Surprise Screen */
+
+#surprise{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#ff4d88;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+font-size:28px;
+z-index:10;
+cursor:pointer;
+}
+
+/* Main Card */
 
 .container{
-    position:relative;
-    z-index:2;
-    margin-top:60px;
-}
-
-h1{
-    color:#ff2e6e;
-    font-size:40px;
+display:none;
+margin-top:60px;
+position:relative;
+z-index:2;
 }
 
 .card{
-    background:white;
-    padding:25px;
-    border-radius:20px;
-    width:320px;
-    margin:auto;
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+background:white;
+padding:25px;
+border-radius:20px;
+width:320px;
+margin:auto;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 img{
-    width:100%;
-    border-radius:15px;
+width:100%;
+border-radius:15px;
+}
+
+h1{
+color:#ff2e6e;
 }
 
 p{
-    font-size:16px;
-    color:#444;
+color:#444;
+font-size:16px;
 }
 
 /* Floating Hearts */
 
 .heart{
-    position:absolute;
-    bottom:-20px;
-    color:red;
-    font-size:20px;
-    animation: float 6s linear infinite;
+position:absolute;
+bottom:-20px;
+font-size:22px;
+color:red;
+animation:float 6s linear infinite;
 }
 
 @keyframes float{
-    0%{
-        transform: translateY(0) scale(1);
-        opacity:1;
-    }
-    100%{
-        transform: translateY(-100vh) scale(1.5);
-        opacity:0;
-    }
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-100vh);
+opacity:0;
+}
 }
 
 </style>
@@ -70,24 +91,29 @@ p{
 
 <body>
 
-<div class="container">
+<div id="surprise" onclick="openGift()">
+🎁 Tap to open your birthday surprise
+</div>
 
-<h1>Happy Birthday Gagan 🎂</h1>
+<div class="container" id="main">
+
+<h1>Happy Birthday Gagan 😍😊❤️😘🎂</h1>
 
 <div class="card">
 
 <img src="gagan.jpg">
 
 <p>
-Dear Gagan ❤️<br><br>
 
-On your special day, I just want to say how lucky the world is to have someone as kind, beautiful, and wonderful as you.  
+Dear Bestie❤️❤️❤️ <br><br>
 
-Your smile can brighten even the darkest days, and your presence makes everything feel special.  
+Today is all about celebrating someone truly special.  
+Hamesha khush reh aur aise hi mere sath ladte jhagadte reh.
+love u moti❤️❤️
+May this birthday bring you endless joy, beautiful memories, and all the success and love you deserve.
 
-May your birthday be filled with happiness, love, laughter, and all the things that make you smile.  
+Keep shining and keep smiling always.
 
-Stay amazing always.  
 
 <br><br>
 
@@ -100,32 +126,40 @@ With warm wishes,<br>
 
 </div>
 
-<!-- Floating Hearts Script -->
+<audio id="music" loop>
+<source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.mid">
+</audio>
 
 <script>
 
+function openGift(){
+document.getElementById("surprise").style.display="none";
+document.getElementById("main").style.display="block";
+document.getElementById("music").play();
+}
+
+/* Floating Hearts */
+
 function createHeart(){
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "💖";
 
-    heart.style.left = Math.random()*100 + "vw";
-    heart.style.animationDuration = (Math.random()*3 + 3) + "s";
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="💖";
 
-    document.body.appendChild(heart);
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+3)+"s";
 
-    setTimeout(()=>{
-        heart.remove();
-    },6000)
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
 }
 
 setInterval(createHeart,300);
 
 </script>
-
-<audio autoplay loop>
-<source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.mid">
-</audio>
 
 </body>
 </html>
